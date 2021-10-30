@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-
+//Luis
 @Entity
 @Table(name = "tb_Practica")
 public class Practica {
