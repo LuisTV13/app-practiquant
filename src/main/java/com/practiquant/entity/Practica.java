@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//Luis
+
 @Entity
 @Table(name = "practica")
 public class Practica {

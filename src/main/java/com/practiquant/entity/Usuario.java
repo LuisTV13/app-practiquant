@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_usuario")
+@Table(name = "usuario")
 public class Usuario {
 	
 	@Id
@@ -25,6 +25,7 @@ public class Usuario {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_tipo")
 	private Tipo_Usuario id_tipo;
+	
 	
 	
 	

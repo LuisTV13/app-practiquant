@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_Postulacion")
+@Table(name = "postulacion")
 public class Postulacion {
 	
 	@Id
@@ -30,22 +30,26 @@ public class Postulacion {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechapostulacion;
-	private int estado;
+
+
+	private String estado;
+	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "codpractica")
 	private Practica codpractica;
+	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "codperfil")
 	private Perfil codperfil;
 	
 	
 	
-	public int getEstado() {
+	public String getEstado() {
 		return estado;
 	}
-	public void setEstado(int estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 	public int getCodpostulacion() {
