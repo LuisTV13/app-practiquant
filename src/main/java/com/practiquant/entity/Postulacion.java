@@ -3,6 +3,7 @@ package com.practiquant.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,6 +30,8 @@ public class Postulacion {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechapostulacion;
+
+
 	private String estado;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

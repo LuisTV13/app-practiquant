@@ -3,6 +3,7 @@ package com.practiquant.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,8 +18,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
-
 @Entity
 @Table(name = "perfil")
 public class Perfil {
@@ -26,12 +25,11 @@ public class Perfil {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codperfil;
-	
-	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne
+
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "codusuario")
-	private Usuario usuario;
-	
+	private Usuario codusuario;
 	private String nombre;
 	private String apellido;
 	
