@@ -30,9 +30,8 @@ public class Postulacion {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechapostulacion;
-
-
 	private String estado;
+
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne

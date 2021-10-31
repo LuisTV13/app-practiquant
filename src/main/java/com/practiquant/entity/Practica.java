@@ -31,6 +31,7 @@ public class Practica {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechatermino;
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "codperfil")
 	private Perfil codperfil;

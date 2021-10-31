@@ -26,6 +26,7 @@ public class Perfil {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codperfil;
 
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "codusuario")

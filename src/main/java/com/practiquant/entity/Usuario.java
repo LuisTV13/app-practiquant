@@ -21,6 +21,7 @@ public class Usuario {
 	private int codusuario;
 	private String usuario;
 	private String clave;
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_tipo")
