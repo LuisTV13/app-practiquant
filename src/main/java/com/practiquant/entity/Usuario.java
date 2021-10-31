@@ -2,6 +2,7 @@ package com.practiquant.entity;
 
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,11 +21,12 @@ public class Usuario {
 	private int codusuario;
 	private String usuario;
 	private String clave;
-	
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_tipo")
 	private Tipo_Usuario id_tipo;
+	
 	
 	
 	

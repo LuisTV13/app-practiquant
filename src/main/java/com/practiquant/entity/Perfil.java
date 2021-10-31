@@ -3,6 +3,7 @@ package com.practiquant.entity;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,13 +25,15 @@ public class Perfil {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codperfil;
-	
+
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "codusuario")
 	private Usuario codusuario;
 	private String nombre;
 	private String apellido;
+	
 	@JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima" )
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -45,11 +48,13 @@ public class Perfil {
 	public void setCodperfil(int codperfil) {
 		this.codperfil = codperfil;
 	}
-	public Usuario getCodusuario() {
-		return codusuario;
+	
+	
+	public Usuario getUsuario() {
+		return usuario;
 	}
-	public void setCodusuario(Usuario codusuario) {
-		this.codusuario = codusuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	public String getNombre() {
 		return nombre;
