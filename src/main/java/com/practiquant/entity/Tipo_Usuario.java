@@ -7,11 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_tipo_u")
+@Table(name = "tipo_u")
 public class Tipo_Usuario {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id_tipo;
 	private String des_tipo;
 
