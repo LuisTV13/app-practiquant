@@ -50,11 +50,12 @@ public class Perfil {
 	}
 	
 	
-	public Usuario getUsuario() {
-		return usuario;
+	
+	public Usuario getCodusuario() {
+		return codusuario;
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setCodusuario(Usuario codusuario) {
+		this.codusuario = codusuario;
 	}
 	public String getNombre() {
 		return nombre;
